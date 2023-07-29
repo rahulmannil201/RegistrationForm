@@ -12,6 +12,9 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
    </head>
    <body>
+      <div class="d-flex justify-content-end mb-3">
+         <button type="button" class="btn btn-primary btn-sm" onclick="goToHomePage()">Home</button>
+      </div>
       <h1>Registered Volunteers</h1>
       <table>
          <tr>
@@ -32,6 +35,12 @@
       <!--<script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
          <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js"></script>
          <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script> -->
+      <script>
+         function goToHomePage() {
+                window.location.href = "index.html";
+            }
+            
+      </script>
       <script type='module'>
          // // Initialize Firebase with your project's config
          // const firebaseConfig = {
