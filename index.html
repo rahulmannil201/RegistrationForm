@@ -19,7 +19,7 @@
             <div class="form">
                <!--<h2>Login Form</h2> -->
                <form action="" method="POST" id="registrationform">
-                  <h1>Register</h1>
+                  <h1>Teach For India Volunteer Signup Form</h1>
                   <div class="alert">Form Submitted Successfully</div>
                   <!-- Section 1 -->
                   <fieldset>
@@ -40,7 +40,21 @@
                      <input type="tel" name="phone" value="" id="phone" required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required />
                      <label class="" for="location">Location:</label>
                      <input type="text" name="location" value="" id="location" required />
-                     <label>Select spoken Languages:</label>
+                     <label>Educational Qualification:</label>
+                     <select id="eq" required>
+                        <option value="phd">PhD</option>
+                        <option value="postgraduate">Post Graduate</option>
+                        <option value="graduate">Graduate</option>
+                        <option value="school">School</option>
+                     </select>
+                     <label>Preferred subjects:</label>
+                     <select id="sub" required>
+                        <option value="maths">Maths</option>
+                        <option value="science">Science</option>
+                        <option value="english">English</option>
+                        <option value="socialstudies">Social Studies</option>
+                     </select>
+                     <label>Select spoken Languages:(Select multiple)</label>
                      <select id="lang" required multiple>
                         <option value="hindi">Hindi</option>
                         <option value="kannada">Kannada</option>
@@ -50,7 +64,7 @@
                         <option value="gujarati">Gujarathi</option>
                         <option value="bangla">Bangla</option>
                      </select>
-                     <label>Week day Availability:</label>
+                     <label>Week day Availability:(Select multiple)</label>
                      <select id="day" required multiple>
                         <option value="sunday">Sunday</option>
                         <option value="monday">Monday</option>
@@ -143,6 +157,8 @@
                       let email = document.querySelector('#email').value;
                       let phone = document.querySelector('#phone').value;
                       let location = document.querySelector('#location').value;
+                      let eq = document.querySelector('#eq').value;
+                      let subject = document.querySelector('#sub').value;
                       //let lan = document.querySelector('#lang').value;
                       //let lan = $("#lang").val();
                       var selected = [];
@@ -172,12 +188,12 @@
                       //let interest = document.querySelector('#interest').value;
                   
                   
-                      sendMessage(name,dob,gender, email, phone, location, lan, day);
+                      sendMessage(name,dob,gender, email, phone, location, eq, subject, lan, day);
                   }
                   
                   
                   //Send Message to Firebase(4)
-                  function sendMessage(name,dob,gender, email, phone, location, lan, day) {
+                  function sendMessage(name,dob,gender, email, phone, location, eq, subject, lan, day) {
                   const database = getDatabase();
                   
                   set(ref(database, 'users/' + Math.floor(Math.random() * 10000000)), {
@@ -187,6 +203,8 @@
                   email: email,
                   phone: phone,
                   location: location,
+                  qualification: eq,
+                  subject: subject,
                   lan: lan,
                   day: day
                   
