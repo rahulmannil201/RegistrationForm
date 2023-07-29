@@ -68,4 +68,20 @@ body {
     border: 1px solid #d6e9c6;
     border-radius: 4px;
   }
+
+
+.intro-message {
+   background-color: #f0f0f0;
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+   margin-bottom: 20px;
+}
+
+.intro-message p {
+   margin-bottom: 10px;
+}
+
+
+
   
