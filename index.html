@@ -43,7 +43,17 @@
                      <label class="" for="phone">Mobile Phone:</label>
                      <input type="tel" name="phone" value="" id="phone" required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required />
                      <label class="" for="location">Location:</label>
-                     <input type="text" name="location" value="" id="location" required />
+                     <!-- <input type="text" name="location" value="" id="location" required /> -->
+                     <select id="location" required>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="pune">Pune</option>
+                        <option value="chennai">Chennai</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="hyderabad">Hyderabad</option>
+                        <option value="ahmedabad">Ahmedabad</option>
+                        <option value="bengaluru">Bengaluru</option>
+                        <option value="kolkata">Kolkata</option>
+                     </select>
                      <label>Educational Qualification:</label>
                      <select id="eq" required>
                         <option value="phd">PhD</option>
